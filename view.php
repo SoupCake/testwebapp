@@ -8,5 +8,20 @@
   if(!$conn){
     die("Error connection: ".sqlsrv_errors());
   }
-  echo "Connection Success: connected!";
+  //echo "Connection Success: connected!";
+  // displaying table
+  echo "<table border='1'>";
+    $tsql = "SELECT * FROM [dbo].[restaurant]";
+    $getResults = sq;srv_query($conn, $tsql);
+    if ($getResults == FALSE)
+    {
+      die(sqlsrv_errors());
+    }
+    while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC))
+    {
+      echo "<tr>";
+      echo "<td>".$row['restaurant_id']."</td>";
+      echo "</tr>";
+    }
+  echo "</table>";
 ?>
