@@ -11,8 +11,8 @@
   //echo "Connection Success: connected!";
   // displaying table
   echo "<table border='1'>";
-    $sql = "SELECT * FROM [dbo].[restaurant]";
-    $getResults = sq;srv_query($conn, $sql);
+    $tsql = "SELECT * FROM [dbo].[restaurant]";
+    $getResults = sq;srv_query($conn, $tsql);
     if ($getResults == FALSE)
     {
       die(sqlsrv_errors());
